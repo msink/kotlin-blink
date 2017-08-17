@@ -1,0 +1,275 @@
+﻿.text:00434E60 Konan_start     proc near               ; CODE XREF: main+1A8p
+.text:00434E60                                         ; DATA XREF: .pdata:00000000004E0D80o
+.text:00434E60
+.text:00434E60 var_E0          = qword ptr -0E0h
+.text:00434E60 var_D8          = qword ptr -0D8h
+.text:00434E60 var_D0          = qword ptr -0D0h
+.text:00434E60 var_C8          = qword ptr -0C8h
+.text:00434E60 var_C0          = xmmword ptr -0C0h
+.text:00434E60 var_B0          = xmmword ptr -0B0h
+.text:00434E60 var_A0          = xmmword ptr -0A0h
+.text:00434E60 var_90          = xmmword ptr -90h
+.text:00434E60 var_80          = xmmword ptr -80h
+.text:00434E60 var_68          = qword ptr -68h
+.text:00434E60 var_60          = xmmword ptr -60h
+.text:00434E60 var_48          = qword ptr -48h
+.text:00434E60 var_40          = xmmword ptr -40h
+.text:00434E60
+.text:00434E60                 push    rbp
+.text:00434E61                 push    r15
+.text:00434E63                 push    r14
+.text:00434E65                 push    rsi
+.text:00434E66                 push    rdi
+.text:00434E67                 push    rbx
+.text:00434E68                 sub     rsp, 0D8h
+.text:00434E6F                 lea     rbp, [rsp+80h]
+.text:00434E77                 movaps  [rbp+80h+var_40], xmm6
+.text:00434E7B                 xorps   xmm6, xmm6
+.text:00434E7E                 movaps  [rbp+80h+var_C0], xmm6
+.text:00434E82                 lea     r14, [rbp+80h+var_C0+8]
+.text:00434E86                 mov     [rbp+80h+var_C8], 0
+.text:00434E8E                 mov     [rbp+80h+var_D0], 0
+.text:00434E96                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:00434E9E                 lea     rcx, [rbp+80h+var_B0]
+.text:00434EA2                 mov     edx, 1
+.text:00434EA7                 call    LeaveFrame
+.text:00434EAC                 movaps  [rbp+80h+var_80], xmm6
+.text:00434EB0                 movaps  [rbp+80h+var_90], xmm6
+.text:00434EB4                 movaps  [rbp+80h+var_A0], xmm6
+.text:00434EB8                 movaps  [rbp+80h+var_B0], xmm6
+.text:00434EBC                 lea     r15, [rbp+80h+var_B0+8]
+.text:00434EC0                 movaps  [rbp+80h+var_60], xmm6
+.text:00434EC4                 lea     rdx, [rbp+80h+var_60+8]
+.text:00434EC8                 mov     rcx, r15
+.text:00434ECB                 call    GetReturnSlotIfArena
+.text:00434ED0                 mov     rsi, rax
+.text:00434ED3                 mov     [rbp+80h+var_68], 0
+.text:00434EDB                 mov     [rbp+80h+var_48], 0
+.text:00434EE3                 lea     rdi, __unnamed_32
+.text:00434EEA                 mov     ecx, cs:dword_4CC01C
+.text:00434EF0                 call    Kotlin_String_getStringLength
+.text:00434EF5                 mov     ebx, eax
+.text:00434EF7                 lea     rcx, [rbp+80h+var_48]
+.text:00434EFB                 mov     edx, 1
+.text:00434F00                 call    LeaveFrame
+.text:00434F05                 xor     edx, edx
+.text:00434F07                 mov     rcx, rdi
+.text:00434F0A                 mov     r8d, ebx
+.text:00434F0D                 mov     r9, rsi
+.text:00434F10                 call    Kotlin_String_toUtf8Array
+.text:00434F15                 mov     rbx, rax
+.text:00434F18                 mov     rcx, rsi
+.text:00434F1B                 mov     rdx, rbx
+.text:00434F1E                 call    UpdateReturnRef
+.text:00434F23                 lea     rcx, [rbp+80h+var_68]
+.text:00434F27                 mov     edx, 1
+.text:00434F2C                 call    LeaveFrame
+.text:00434F31                 lea     rcx, ktypeglobal_kotlinx_cinterop__get_cstr__object_1_internal
+.text:00434F38                 mov     rdx, r15
+.text:00434F3B                 call    AllocInstance
+.text:00434F40                 mov     rdi, rax
+.text:00434F43                 mov     [rbp+80h+var_D8], 0
+.text:00434F4B                 lea     rsi, [rdi+10h]
+.text:00434F4F                 mov     rcx, rsi
+.text:00434F52                 mov     rdx, rbx
+.text:00434F55                 call    UpdateRef
+.text:00434F5A                 mov     [rbp+80h+var_E0], 0
+.text:00434F62                 mov     [rbp+80h+var_68], 0
+.text:00434F6A                 mov     [rbp+80h+var_48], 0
+.text:00434F72                 lea     rcx, [rbp+80h+var_48]
+.text:00434F76                 mov     edx, 1
+.text:00434F7B                 call    LeaveFrame
+.text:00434F80                 lea     rcx, [rbp+80h+var_68]
+.text:00434F84                 mov     edx, 1
+.text:00434F89                 call    LeaveFrame
+.text:00434F8E                 lea     rcx, [rbp+80h+var_E0]
+.text:00434F92                 mov     edx, 1
+.text:00434F97                 call    LeaveFrame
+.text:00434F9C                 lea     rcx, [rbp+80h+var_D8]
+.text:00434FA0                 mov     edx, 1
+.text:00434FA5                 call    LeaveFrame
+.text:00434FAA                 mov     rcx, r15
+.text:00434FAD                 mov     rdx, rdi
+.text:00434FB0                 call    UpdateReturnRef
+.text:00434FB5                 lea     rcx, [rbp+80h+var_60]
+.text:00434FB9                 mov     edx, 2
+.text:00434FBE                 call    LeaveFrame
+.text:00434FC3                 test    rdi, rdi
+.text:00434FC6                 jz      short loc_435034
+.text:00434FC8                 lea     rdx, ktypeglobal_konan_internal_CPointerBox_internal
+.text:00434FCF                 mov     rcx, rdi
+.text:00434FD2                 call    IsInstance
+.text:00434FD7                 test    al, 1
+.text:00434FD9                 jnz     short loc_435040
+.text:00434FDB                 mov     rax, gs:58h
+.text:00434FE4                 mov     rax, [rax]
+.text:00434FE7                 mov     rdx, [rax+0A0h]
+.text:00434FEE                 test    rdx, rdx
+.text:00434FF1                 jnz     short loc_435020
+.text:00434FF3                 lea     r9, [rbp+80h+var_A0+8]
+.text:00434FF7                 mov     rax, gs:58h
+.text:00435000                 mov     rax, [rax]
+.text:00435003                 lea     rcx, [rax+0A0h]
+.text:0043500A                 lea     rdx, ktypeglobal_kotlinx_cinterop_nativeHeap_internal
+.text:00435011                 lea     r8, kfun_kotlinx_cinterop_nativeHeap__init___Reference
+.text:00435018                 call    InitInstance
+.text:0043501D                 mov     rdx, rax
+.text:00435020
+.text:00435020 loc_435020:                             ; CODE XREF: Konan_start+191j
+.text:00435020                 mov     rax, [rdi]
+.text:00435023                 mov     rax, [rax+78h]
+.text:00435027                 mov     rcx, rdi
+.text:0043502A                 call    rax
+.text:0043502C                 mov     rdi, rax
+.text:0043502F                 mov     sil, 1
+.text:00435032                 jmp     short loc_435071
+.text:00435034 ; ---------------------------------------------------------------------------
+.text:00435034
+.text:00435034 loc_435034:                             ; CODE XREF: Konan_start+166j
+.text:00435034                 mov     [rbp+80h+var_48], 0
+.text:0043503C                 xor     edi, edi
+.text:0043503E                 jmp     short loc_435061
+.text:00435040 ; ---------------------------------------------------------------------------
+.text:00435040
+.text:00435040 loc_435040:                             ; CODE XREF: Konan_start+179j
+.text:00435040                 mov     [rbp+80h+var_48], 0
+.text:00435048                 mov     qword ptr [rbp+80h+var_60], 0
+.text:00435050                 mov     rdi, [rsi]
+.text:00435053                 lea     rcx, [rbp+80h+var_60]
+.text:00435057                 mov     edx, 1
+.text:0043505C                 call    LeaveFrame
+.text:00435061
+.text:00435061 loc_435061:                             ; CODE XREF: Konan_start+1DEj
+.text:00435061                 lea     rcx, [rbp+80h+var_48]
+.text:00435065                 mov     edx, 1
+.text:0043506A                 call    LeaveFrame
+.text:0043506F                 xor     esi, esi
+.text:00435071
+.text:00435071 loc_435071:                             ; CODE XREF: Konan_start+1D2j
+.text:00435071                 mov     qword ptr [rbp+80h+var_60], 0
+.text:00435079                 lea     rcx, [rbp+80h+var_60]
+.text:0043507D                 mov     edx, 1
+.text:00435082                 call    LeaveFrame
+.text:00435087                 mov     rcx, rdi
+.text:0043508A                 call    lib_kniBridge5
+.text:0043508F                 test    sil, sil
+.text:00435092                 jz      short loc_4350FA
+.text:00435094                 mov     rax, gs:58h
+.text:0043509D                 mov     rax, [rax]
+.text:004350A0                 mov     rsi, [rax+0A0h]
+.text:004350A7                 test    rsi, rsi
+.text:004350AA                 jnz     short loc_4350D9
+.text:004350AC                 lea     r9, [rbp+80h+var_80]
+.text:004350B0                 mov     rax, gs:58h
+.text:004350B9                 mov     rax, [rax]
+.text:004350BC                 lea     rcx, [rax+0A0h]
+.text:004350C3                 lea     rdx, ktypeglobal_kotlinx_cinterop_nativeHeap_internal
+.text:004350CA                 lea     r8, kfun_kotlinx_cinterop_nativeHeap__init___Reference
+.text:004350D1                 call    InitInstance
+.text:004350D6                 mov     rsi, rax
+.text:004350D9
+.text:004350D9 loc_4350D9:                             ; CODE XREF: Konan_start+24Aj
+.text:004350D9                 mov     qword ptr [rbp+80h+var_60], 0
+.text:004350E1                 lea     rcx, [rbp+80h+var_60]
+.text:004350E5                 mov     edx, 1
+.text:004350EA                 call    LeaveFrame
+.text:004350EF                 mov     rcx, rsi
+.text:004350F2                 mov     rdx, rdi
+.text:004350F5                 call    kfun_kotlinx_cinterop_nativeHeap_free_konan_internal_NativePtr_
+.text:004350FA
+.text:004350FA loc_4350FA:                             ; CODE XREF: Konan_start+232j
+.text:004350FA                 lea     rsi, [rbp+80h+var_B0]
+.text:004350FE                 mov     edx, 8
+.text:00435103                 mov     rcx, rsi
+.text:00435106                 call    LeaveFrame
+.text:0043510B                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:00435113                 lea     rcx, [rbp+80h+var_B0]
+.text:00435117                 mov     edx, 1
+.text:0043511C                 call    LeaveFrame
+.text:00435121                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:00435129                 call    lib_kniBridge7
+.text:0043512E                 lea     rcx, [rbp+80h+var_B0]
+.text:00435132                 mov     edx, 1
+.text:00435137                 call    LeaveFrame
+.text:0043513C                 nop     dword ptr [rax+00h]
+.text:00435140
+.text:00435140 loc_435140:                             ; CODE XREF: Konan_start+379j
+.text:00435140                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:00435148                 call    lib_kniBridge11
+.text:0043514D                 mov     edx, 1
+.text:00435152                 mov     rcx, rsi
+.text:00435155                 call    LeaveFrame
+.text:0043515A                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:00435162                 mov     edx, 1
+.text:00435167                 mov     rcx, rsi
+.text:0043516A                 call    LeaveFrame
+.text:0043516F                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:00435177                 xor     ecx, ecx
+.text:00435179                 call    lib_kniBridge9
+.text:0043517E                 mov     edx, 1
+.text:00435183                 mov     rcx, rsi
+.text:00435186                 call    LeaveFrame
+.text:0043518B                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:00435193                 call    lib_kniBridge11
+.text:00435198                 mov     edx, 1
+.text:0043519D                 mov     rcx, rsi
+.text:004351A0                 call    LeaveFrame
+.text:004351A5                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:004351AD                 mov     edx, 1
+.text:004351B2                 mov     rcx, rsi
+.text:004351B5                 call    LeaveFrame
+.text:004351BA                 mov     qword ptr [rbp+80h+var_B0], 0
+.text:004351C2                 mov     ecx, 1
+.text:004351C7                 call    lib_kniBridge9
+.text:004351CC                 mov     edx, 1
+.text:004351D1                 mov     rcx, rsi
+.text:004351D4                 call    LeaveFrame
+.text:004351D9                 jmp     loc_435140
+.text:004351D9 Konan_start     endp
+
+.text:00401620 lib_kniBridge5  proc near               ; CODE XREF: Konan_start+22Ap
+.text:00401620                                         ; DATA XREF: .pdata:00000000004E006Co
+.text:00401620                 sub     rsp, 28h
+.text:00401624                 mov     rax, rcx
+.text:00401627                 xor     ecx, ecx
+.text:00401629                 mov     rdx, rax
+.text:0040162C                 call    bfin_gpio_request
+.text:00401631                 nop
+.text:00401632                 add     rsp, 28h
+.text:00401636                 retn
+.text:00401636 lib_kniBridge5  endp
+.text:00401636
+.text:00401640 lib_kniBridge7  proc near               ; CODE XREF: Konan_start+2C9p
+.text:00401640                                         ; DATA XREF: .pdata:00000000004E0078o
+.text:00401640                 sub     rsp, 28h
+.text:00401644                 xor     ecx, ecx
+.text:00401646                 mov     edx, 1
+.text:0040164B                 call    bfin_gpio_direction_output
+.text:00401650                 nop
+.text:00401651                 add     rsp, 28h
+.text:00401655                 retn
+.text:00401655 lib_kniBridge7  endp
+.text:00401655
+.text:00401660 lib_kniBridge9  proc near               ; CODE XREF: Konan_start+319p
+.text:00401660                                         ; Konan_start+367p
+.text:00401660                                         ; DATA XREF: ...
+.text:00401660                 sub     rsp, 28h
+.text:00401664                 mov     eax, ecx
+.text:00401666                 xor     ecx, ecx
+.text:00401668                 mov     edx, eax
+.text:0040166A                 call    bfin_gpio_set_value
+.text:0040166F                 nop
+.text:00401670                 add     rsp, 28h
+.text:00401674                 retn
+.text:00401674 lib_kniBridge9  endp
+.text:00401674
+.text:00401680 lib_kniBridge11 proc near               ; CODE XREF: Konan_start+2E8p
+.text:00401680                                         ; Konan_start+333p
+.text:00401680                                         ; DATA XREF: ...
+.text:00401680                 sub     rsp, 28h
+.text:00401684                 mov     ecx, 0C8h
+.text:00401689                 call    mdelay
+.text:0040168E                 nop
+.text:0040168F                 add     rsp, 28h
+.text:00401693                 retn
+.text:00401693 lib_kniBridge11 endp

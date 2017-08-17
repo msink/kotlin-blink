@@ -1,0 +1,29 @@
+﻿.text:004015B0 ; int __cdecl main(int argc, char **argv)
+.text:004015B0                 public main
+.text:004015B0 main            proc near               ; CODE XREF: __tmainCRTStartup+243p
+.text:004015B0 argv = rdx                              ; char **
+.text:004015B0                 push    rbp
+.text:004015B1                 sub     rsp, 20h
+.text:004015B5                 lea     rbp, [rsp+20h]
+.text:004015BA                 call    __main
+.text:004015BF                 lea     rdx, L_str      ; "blink-lcd"
+.text:004015C6                 xor     ecx, ecx
+.text:004015C8                 call    bfin_gpio_request
+.text:004015CD                 xor     ecx, ecx
+.text:004015CF                 mov     edx, 1
+.text:004015D4                 call    bfin_gpio_direction_output
+.text:004015D9                 nop     dword ptr [rax+00000000h]
+.text:004015E0
+.text:004015E0 loc_4015E0:                             ; CODE XREF: main+59j
+.text:004015E0                 mov     ecx, 0C8h
+.text:004015E5                 call    mdelay
+.text:004015EA                 xor     ecx, ecx
+.text:004015EC                 xor     edx, edx
+.text:004015EE                 call    bfin_gpio_set_value
+.text:004015F3                 mov     ecx, 0C8h
+.text:004015F8                 call    mdelay
+.text:004015FD                 xor     ecx, ecx
+.text:004015FF                 mov     edx, 1
+.text:00401604                 call    bfin_gpio_set_value
+.text:00401609                 jmp     short loc_4015E0
+.text:00401609 main            endp

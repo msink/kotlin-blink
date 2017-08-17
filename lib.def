@@ -1,0 +1,3 @@
+headers = lib/gpio.h lib/time.h
+headerFilter = lib/gpio.h lib/time.h
+compilerOpts = -I./src

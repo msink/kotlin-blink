@@ -6,7 +6,7 @@
 .text:004015B1                 sub     rsp, 20h
 .text:004015B5                 lea     rbp, [rsp+20h]
 .text:004015BA                 call    __main
-.text:004015BF                 lea     rdx, L_str      ; "blink-lcd"
+.text:004015BF                 lea     rdx, L_str      ; "blink-led"
 .text:004015C6                 xor     ecx, ecx
 .text:004015C8                 call    bfin_gpio_request
 .text:004015CD                 xor     ecx, ecx

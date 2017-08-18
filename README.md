@@ -7,17 +7,17 @@
 #include <lib/gpio.h>
 #include <lib/time.h>
 
-#define BLINK_LCD       0
+#define BLINK_LED       0
 
 int main(int argc, char *argv[])
 {
-        gpio_request(BLINK_LCD, "blink-lcd");
-        gpio_direction_output(BLINK_LCD, 1);
+        gpio_request(BLINK_LED, "blink-led");
+        gpio_direction_output(BLINK_LED, 1);
         for (;;) {
                 mdelay(200);
-                gpio_set_value(BLINK_LCD, 0);
+                gpio_set_value(BLINK_LED, 0);
                 mdelay(200);
-                gpio_set_value(BLINK_LCD, 1);
+                gpio_set_value(BLINK_LED, 1);
         }
 }
 ```
@@ -29,16 +29,16 @@ compiled code size:  (0x401609 - 0x4015B0) = 89 bytes
 ```kotlin
 import lib.*
 
-const val BLINK_LCD = 0
+const val BLINK_LED = 0
 
 fun main(args: Array<String>) {
-        gpio_request(BLINK_LCD, "blink-lcd");
-        gpio_direction_output(BLINK_LCD, 1);
+        gpio_request(BLINK_LED, "blink-led");
+        gpio_direction_output(BLINK_LED, 1);
         while (true) {
                 mdelay(200);
-                gpio_set_value(BLINK_LCD, 0);
+                gpio_set_value(BLINK_LED, 0);
                 mdelay(200);
-                gpio_set_value(BLINK_LCD, 1);
+                gpio_set_value(BLINK_LED, 1);
         }
 }
 ```
